@@ -6,62 +6,106 @@
 <title>4SAI</title>
 <style>
   :root{
-    --bg:#1e1f22; --panel:#292b31; --text:#e6edf3; --muted:#9aa6b2;
-    --accent:#3e8af6; --border:#3a3d44;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-    background:var(--bg); color:var(--text);
-    display:flex; flex-direction:column; align-items:center; min-height:100vh;
-  }
-  .wrap{max-width:1100px;width:100%;padding:40px 20px;text-align:center}
-  header{margin-bottom:40px}
-  .logo{
-    width:180px; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.4)); opacity:.95;
-  }
-  .logo-fallback{
-    width:180px; height:60px; border:2px dashed var(--border); border-radius:12px;
-    display:flex; align-items:center; justify-content:center; color:var(--muted);
-    font-weight:700; letter-spacing:.5px;
+    --bg:#2c2f34;         /* lighter dark grey */
+    --panel:#363a40;      /* panel color */
+    --text:#e6edf3;       /* main text */
+    --muted:#9aa6b2;      /* muted text */
+    --accent:#3e8af6;     /* accent blue */
+    --border:#4a4e56;     /* border color */
   }
 
-  /* Grid of buttons */
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+  }
+
+  /* Header / Banner */
+  header{
+    width:100%;
+    background:linear-gradient(135deg, #3b3f45, #2c2f34);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .logo{
+    width:320px; /* larger banner size */
+    height:auto;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,0.4));
+  }
+  .logo-fallback{
+    width:320px;
+    height:80px;
+    border:2px dashed var(--border);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-weight:700;
+    letter-spacing:.6px;
+  }
+
+  /* Grid buttons */
+  .wrap{max-width:1100px;width:100%;padding:50px 20px;text-align:center}
   .grid{
-    display:grid; gap:20px;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    justify-items:center; margin-bottom:50px;
+    display:grid;
+    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    justify-items:center;
+    margin-bottom:50px;
   }
   .card{
-    background:var(--panel); border:1px solid var(--border);
-    width:200px; height:200px; border-radius:18px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-decoration:none; color:var(--text);
+    background:var(--panel);
+    border:1px solid var(--border);
+    width:220px;
+    height:220px;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:var(--text);
     transition:transform .15s ease,border-color .15s ease;
   }
   .card:hover{transform:translateY(-4px);border-color:var(--accent)}
-  .icon{width:64px;height:64px;margin-bottom:12px;opacity:.95}
-  .label{font-weight:700;letter-spacing:.4px}
+  .icon{width:70px;height:70px;margin-bottom:14px;opacity:.95}
+  .label{font-weight:700;letter-spacing:.4px;font-size:17px}
 
+  /* Contact */
   .contact{
-    background:var(--panel); border:1px solid var(--border);
-    border-radius:14px; padding:20px; color:var(--text);
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    color:var(--text);
     font-size:17px;
   }
-  .contact a{color:var(--accent); text-decoration:none}
+  .contact a{color:var(--accent);text-decoration:none}
   .contact a:hover{text-decoration:underline}
+
   footer{margin-top:40px;color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- Logo -->
-    <header>
-      <img src="assets/logo.png" alt="4SAI" class="logo"
-           onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>4SAI</div>'">
-    </header>
 
-    <!-- 3 buttons -->
+  <!-- 4SAI Banner -->
+  <header>
+    <img src="assets/logo.png" alt="4SAI" class="logo"
+         onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>4SAI</div>'">
+  </header>
+
+  <!-- Main buttons -->
+  <div class="wrap">
     <section class="grid">
       <!-- Compliance -->
       <a class="card" href="#compliance">
@@ -94,9 +138,16 @@
       </a>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact info -->
     <section class="contact">
       Contact us at
       <a href="mailto:info@4sai.org">info@4sai.org</a> ·
       <a href="tel:+17215881184">+1 721 588 1184</a>
-      (also
+      (also <a href="https://wa.me/17215881184" target="_blank" rel="noopener">WhatsApp</a>)
+    </section>
+
+    <footer>© 2025 4SAI</footer>
+  </div>
+
+</body>
+</html>
